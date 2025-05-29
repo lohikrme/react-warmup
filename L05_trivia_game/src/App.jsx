@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import he from 'he'
 
@@ -11,6 +11,7 @@ function App() {
   const [difficulty, setDifficulty] = useState("easy")
   const [category, setCategory] = useState("General")
   const [userAnswer, setUserAnswer] = useState()
+  const [options, setOptions] = useState([])
 
 
   // replace category name with a suitable api call
@@ -82,6 +83,22 @@ function App() {
     .catch(error => console.error(error))
   }
 
+
+  const checkAnswer = () => {
+    if (userAnswer === puzzle.correct_answer) {
+      return alert("Correeeect! =)")
+    }
+    return alert("Wrong :(!")
+  }
+
+  // when puzzle updates, also update options for answers + select first option as current user answer
+  // current user answer will change if he choose something else
+  useEffect(() => {
+    const answers = shuffleAnswers(puzzle.correct_answer, puzzle.incorrect_answers);
+    setOptions(answers)
+    setUserAnswer(answers[0])
+  }, [puzzle])
+
   
 
   return (
@@ -96,12 +113,12 @@ function App() {
       <select id="user_answer" name="user-answer" size="1"
         defaultValue=""
         onChange={(event) => setUserAnswer(event.target.value)}>
-        {shuffleAnswers(puzzle.correct_answer, puzzle.incorrect_answers).map((answer, index) => {
+        {options.map((answer, index) => {
           return <option>{answer}</option>
         })
         }
       </select>
-      <button id="check_button">Check!</button>
+      <button id="check_button" onClick={checkAnswer}>Check!</button>
     </div>
     
     <h3>Generate a new question:</h3>
