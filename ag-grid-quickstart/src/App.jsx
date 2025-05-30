@@ -1,8 +1,15 @@
+
+import { AgGridReact } from 'ag-grid-react';
+import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
+import 'ag-grid-community/styles/ag-theme-quartz.css'; 
+
 import { useState } from 'react'
 import './App.css'
-import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
+
 
 function App() {
+
+  ModuleRegistry.registerModules([ AllCommunityModule ]);
   // Row Data: The data to be displayed.
   const [rowData, setRowData] = useState([
       { make: "Tesla", model: "Model Y", price: 64950, electric: true },
@@ -20,11 +27,8 @@ function App() {
 
   return (
     <>
-      <div style={{ height: 500, width: 500, backgroundColor: "lightgreen" }}>
-          <AgGridReact
-              rowData={rowData}
-              columnDefs={colDefs}
-          />
+      <div  className='ag-theme-quartz' style={{ height: 500}}>
+          <AgGridReact rowData={rowData} columnDefs={colDefs}/>
       </div>
     </>
   )
