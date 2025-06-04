@@ -1,0 +1,41 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: rgba(50, 120, 75, 0.231);
+  text-align: center;
+}
+
+header {
+  height: 100px;
+  background-color: rgba(50, 120, 75, 0.231);
+}
+
+.navigation {
+  display: flex;
+  width: 1200px;
+}
+
+.navlink {
+  font-size: 40px;
+  color: #121212;
+  margin-left: 2vw;
+  margin-top: 2%;
+  
+}
+
+.navlink:hover {
+  color:rgb(168, 24, 41)
+}
+
+.navlink:active {
+  color:rgb(95, 29, 36)
+}
+
+h1 {
+    line-height: 1.5;
+}

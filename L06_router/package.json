@@ -1,5 +1,5 @@
 {
-  "name": "l06-third-party-grid",
+  "name": "l06-router",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ag-grid-community/styles": "^32.3.5",
     "ag-grid-community": "^33.3.1",
     "ag-grid-react": "^33.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "reactive-button": "^1.3.15"
+    "react-router-dom": "^6.30.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

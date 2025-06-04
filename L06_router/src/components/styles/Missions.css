@@ -1,0 +1,52 @@
+
+
+.missions-container {
+    height: 1000px;
+    width: 1200px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+input {
+    height: 30px;
+    width: 300px;
+    margin-left: 20px;
+}
+
+select {
+    height: 35px;
+    margin-left: 20px;
+}
+
+
+button {
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+main {
+    width: 1000px;
+}
+
+.title-wrap {
+    width: 90%;
+}
+
+.todo-wrapper {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 1006px;
+    background-color: rgba(0, 0, 0, 0.761);
+    position: relative;
+}
+
+#add_button {
+    margin-left: 20%;
+}
+
+#ag_grid {
+    border: solid rgba(0, 0, 0, 0.761) 3px;
+}
