@@ -19,18 +19,10 @@ function Missions() {
   const [newStatus, setNewStatus] = useState()
 
   const [colDefs, setColDefs] = useState([
-    {width: 50},
+    {headerCheckboxSelection: true, checkboxSelection: true, width: 50},
     {field: "description", minWidth: 400},
     {field: "status", filter: true}
   ])
-
-  
-  const gridOptions = {
-  rowSelection: {
-    type: 'multiple',
-    headerCheckbox: true
-    }
-  }
 
 
 
@@ -86,7 +78,7 @@ function Missions() {
         <AgGridReact
           rowData={tasks}
           columnDefs={colDefs}
-          gridOptions={gridOptions}
+          rowSelection="multiple"
         />
       </div>
     </div>
