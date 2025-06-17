@@ -1,0 +1,25 @@
+{
+    "books": {
+        "-MGvq69vFRNAi6N4RPPf": {
+            "title": "Anna Karenina",
+            "author": "Leo Tolstoy",
+            "year": "1877",
+            "isbn": "9780140864854",
+            "price": "13.5"
+        },
+        "-MGvqCptPhR1BMdNN2IQ": {
+            "title": "The Haunting of Hill House",
+            "author": "Shirley Jackson",
+            "year": "1992",
+            "isbn": "9780141191447",
+            "price": "9.75"
+        },
+        "-MGvqjSh1NIsG00dXoQo": {
+            "title": "The Lords of the Rings",
+            "author": "J.R.R Tolkien",
+            "year": "2023",
+            "isbn": "9789510499399",
+            "price": "49.30"
+        }
+    }
+}

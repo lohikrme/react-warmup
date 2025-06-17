@@ -8,13 +8,14 @@ import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
 import { themeQuartz } from 'ag-grid-community'
 import ReactiveButton from 'reactive-button'
 
+// Register all Community features
+ModuleRegistry.registerModules([AllCommunityModule])
+
 function App() {
   const [state, setState] = useState("idle")
   const [todo, setTodo] = useState({description: '', date: '', status: ''})
   const [todos, setTodos] = useState([])
 
-  // Register all Community features
-  ModuleRegistry.registerModules([AllCommunityModule])
 
   // Column definitions for ag-grid
   const columnDefs = [
