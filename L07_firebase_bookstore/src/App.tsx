@@ -10,7 +10,7 @@ import { IconButton } from '@mui/material'
 import { DeleteForever } from '@mui/icons-material'
 import { useEffect } from 'react'
 
-import AddBook from './components/addBook'
+import AddBook from './components/AddBook'
 
 // Register all Community features
 ModuleRegistry.registerModules([AllCommunityModule])

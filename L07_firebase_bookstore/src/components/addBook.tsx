@@ -10,9 +10,10 @@ import DialogTitle from '@mui/material/DialogTitle'
 import { Book } from '../types/Book'
 
 // addBook
-function AddBook({}) {
+function AddBook({ fetchBooks }: { fetchBooks: () => void }) {
     const [open, setOpen] = useState(false)
     const [book, setBook] = useState<Book>({
+        id: '',
         author: '',
         isbn: '',
         price: '',
@@ -41,7 +42,7 @@ function AddBook({}) {
 
     // adding new books into database is done by receiving new Book from book state
     // and then stringify that to a suitable json form and send to database
-    const addBook = (newBook) => {
+    const addBook = (newBook: Book) => {
         fetch(
             'https://bookstore-ab22b-default-rtdb.europe-west1.firebasedatabase.app/books/.json',
             {
@@ -55,7 +56,12 @@ function AddBook({}) {
 
     // inputChanged keeps log of current state of a single new book to be added
     // for learning purposes prints any change done to the new book
-    const inputChanged = (event) => {
+    const inputChanged: React.ChangeEventHandler<
+        HTMLInputElement | HTMLTextAreaElement
+    > = (event) => {
+        if (!event) {
+            return
+        }
         console.log(event.target.value)
         setBook({
             ...book,
